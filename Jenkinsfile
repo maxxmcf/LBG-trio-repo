@@ -18,7 +18,7 @@ pipeline {
                 rm -rf freestyle-demo
                 git clone git@github.com:maxxmcf/freestyle-demo.git
                 cd freestyle-demo
-                echo "hi, you are on the SECOND server"
+                echo "hi, its you on the SECOND server"
                 chmod +x hello.sh
                 ./hello.sh
                 hostname
