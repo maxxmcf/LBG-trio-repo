@@ -34,7 +34,7 @@ pipeline {
                 docker run -d --name flask-app maxmcf13/myapp:latest
                 docker run -d --name mysql maxmcf13/mydb:latest
                 docker network create mynw
-                docker network connect mynw myengine
+                docker network connect mynw engine
                 docker network connect mynw flask-app
                 docker network connect mynw mysql
                 docker run -d -p 80:80 --name engine maxmcf13/mynginx:latest
