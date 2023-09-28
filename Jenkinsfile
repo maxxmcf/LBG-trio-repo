@@ -11,9 +11,9 @@ pipeline {
         stage('doing docker') {
             steps {
                 sh '''
-                docker build - t mynginx:latest ./nginx
-                docker build - t myapp:latest ./flask-app
-                docker build - t mydb:latest ./db
+                docker build -t mynginx:latest ./nginx
+                docker build -t myapp:latest ./flask-app
+                docker build -t mydb:latest ./db
                 docker push maxmcf13/mynginx:latest
                 docker push maxmcf13/myapp:latest
                 docker push maxmcf13/mydb:latest
