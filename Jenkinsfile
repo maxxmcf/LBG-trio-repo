@@ -11,7 +11,12 @@ pipeline {
         stage('doing docker') {
             steps {
                 sh '''
-                docker build + run
+                docker build - t mynginx:latest ./nginx
+                docker build - t myapp:latest ./flask-app
+                docker build - t mydb:latest ./db
+                docker push maxmcf13/mynginx:latest
+                docker push maxmcf13/myapp:latest
+                docker push maxmcf13/mydb:latest
                 '''
             }
         }
@@ -19,13 +24,9 @@ pipeline {
             steps {
                 sh '''
                 ssh -i "~/.ssh/id_rsa" jenkins@10.154.0.28 << EOF
-                rm -rf freestyle-demo
-                git clone git@github.com:maxxmcf/freestyle-demo.git
-                cd freestyle-demo
-                echo "hi there - you are on the SECOND server"
-                chmod +x hello.sh
-                ./hello.sh
-                hostname
+                docker pull x3
+                docker run x3
+                network???
                 '''
             }
         }
