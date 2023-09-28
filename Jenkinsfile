@@ -11,6 +11,7 @@ pipeline {
         stage('doing docker') {
             steps {
                 sh '''
+                docker login
                 docker build -t mynginx:latest ./nginx
                 docker build -t myapp:latest ./flask-app
                 docker build -t mydb:latest ./db
