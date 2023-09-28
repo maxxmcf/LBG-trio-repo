@@ -24,12 +24,9 @@ pipeline {
             steps {
                 sh '''
                 ssh -i "~/.ssh/id_rsa" jenkins@10.154.0.28 << EOF
-                docker pull maxmcf13/mynginx:latest
-                docker pull maxmcf13/myapp:latest
-                docker pull maxmcf13/mydb:latest
-                docker run -d -p 80:80 mynginx:latest
-                docker run -d --name flask-app myapp:latest
-                docker run -d --name flask-db mydb:latest
+                docker run -d -p 80:80 maxmcf13/mynginx:latest
+                docker run -d --name flask-app maxmcf13/myapp:latest
+                docker run -d --name mysql maxmcf13/mydb:latest
                 '''
             }
         }
