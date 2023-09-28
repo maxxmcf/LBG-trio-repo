@@ -53,28 +53,28 @@ pipeline {
                 docker pull maxmcf13/mydb
                 docker network inspect mynw && sleep 1 || docker network create mynw
                 docker volume inspect mynw && sleep 1 || docker volume create mynw
-                if [ docker stop mysql ]; then
+                if [[ docker stop mysql ]]; then
                   docker rm mysql
                 else
-                  if [ docker rm mysql ]; then
+                  if [[ docker rm mysql ]]; then
                     sleep 1
                   else
                     sleep
                   fi
                 fi
-                if [ docker stop engine ]; then
+                if [[ docker stop engine ]]; then
                   docker rm engine
                 else
-                  if [ docker rm engine ]; then
+                  if [[ docker rm engine ]]; then
                     sleep 1
                   else
                     sleep
                   fi
                 fi
-                if [ docker stop flask-app ]; then
+                if [[ docker stop flask-app ]]; then
                   docker rm flask-app
                 else
-                  if [ docker rm flask-app ]; then
+                  if [[ docker rm flask-app ]]; then
                     sleep 1
                   else
                     sleep
