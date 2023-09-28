@@ -19,6 +19,7 @@ pipeline {
                 docker build -t maxmcf13/mydb:${BUILD_NUMBER} ./db
                 '''
             }
+        }
         stage('push docker images') {
             steps {
                 sh '''
