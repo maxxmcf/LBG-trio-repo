@@ -35,7 +35,7 @@ pipeline {
         stage('running app') {
             steps {
                 sh '''
-                ssh -i "~/.ssh/id_rsa" jenkins@max-vm2 << EOF
+                ssh -i "~/.ssh/id_rsa" jenkins@10.154.0.28 << EOF
                 docker network create mynw
                 docker volume create mynw
                 docker pull maxmcf13/mynginx
