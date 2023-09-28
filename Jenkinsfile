@@ -36,6 +36,12 @@ pipeline {
             steps {
                 sh '''
                 ssh -i "~/.ssh/id_rsa" jenkins@10.154.0.28 << EOF
+                docker stop engine
+                docker remove engine
+                docker stop flask-app
+                docker remove flask-app
+                docker stop mysql
+                docker remove mysql                
                 docker network create mynw
                 docker volume create mynw
                 docker pull maxmcf13/mynginx
