@@ -37,3 +37,14 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
+        env:
+        - name: MYSQLPW
+          valueFrom:
+            secretKeyRef:
+              name: sql-creds 
+              key: MYSQL_ROOT_PASSWORD       
+        - name: DBNAME
+          valueFrom:
+            secretKeyRef:
+              name: sql-creds 
+              key: MYSQL_DATABASE 
