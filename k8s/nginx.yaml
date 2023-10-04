@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: nginx-container
-        image: maxmcf13/mynginx:v1
+        image: maxmcf13/mynginx:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80
