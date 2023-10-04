@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: flask-container
-        image: maxmcf13/myapp:latest
+        image: maxmcf13/myapp:v1
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
